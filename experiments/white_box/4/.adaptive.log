@@ -1,0 +1,354 @@
+M *************************************************************8
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.3',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000                10.0
+mean                 1.0                    1.0  11603.600000       1000.0       0.996547                 0.0
+std                  0.0                    0.0   2165.384451          0.0       0.004479                 0.0
+min                  1.0                    1.0   8589.000000       1000.0       0.987910                 0.0
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189                 0.0
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238                 0.0
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803                 0.0
+max                  1.0                    1.0  15001.000000       1000.0       0.999920                 0.0
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.4',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000           10.000000
+mean                 1.0                    1.0  11574.700000       1000.0       0.996268            0.003172
+std                  0.0                    0.0   2203.933355          0.0       0.005118            0.010031
+min                  1.0                    1.0   8589.000000       1000.0       0.985122            0.000000
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189            0.000000
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238            0.000000
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803            0.000000
+max                  1.0                    1.0  15001.000000       1000.0       0.999920            0.031720
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.5',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000                10.0
+mean                 1.0                    1.0  11603.600000       1000.0       0.996547                 0.0
+std                  0.0                    0.0   2165.384451          0.0       0.004479                 0.0
+min                  1.0                    1.0   8589.000000       1000.0       0.987910                 0.0
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189                 0.0
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238                 0.0
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803                 0.0
+max                  1.0                    1.0  15001.000000       1000.0       0.999920                 0.0
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.6',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000           10.000000
+mean                 1.0                    1.0  11574.700000       1000.0       0.996268            0.003172
+std                  0.0                    0.0   2203.933355          0.0       0.005118            0.010031
+min                  1.0                    1.0   8589.000000       1000.0       0.985122            0.000000
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189            0.000000
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238            0.000000
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803            0.000000
+max                  1.0                    1.0  15001.000000       1000.0       0.999920            0.031720
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.7',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied   weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.00000         10.0      10.000000           10.000000
+mean                 1.0                    1.0  11553.90000       1000.0       0.996113            0.004912
+std                  0.0                    0.0   2200.94588          0.0       0.005378            0.010892
+min                  1.0                    1.0   8589.00000       1000.0       0.985122            0.000000
+25%                  1.0                    1.0  10034.75000       1000.0       0.996189            0.000000
+50%                  1.0                    1.0  11454.50000       1000.0       0.998238            0.000000
+75%                  1.0                    1.0  12761.25000       1000.0       0.999803            0.000000
+max                  1.0                    1.0  15001.00000       1000.0       0.999920            0.031720
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.8',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000           10.000000
+mean                 1.0                    1.0  11574.700000       1000.0       0.996268            0.003172
+std                  0.0                    0.0   2203.933355          0.0       0.005118            0.010031
+min                  1.0                    1.0   8589.000000       1000.0       0.985122            0.000000
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189            0.000000
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238            0.000000
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803            0.000000
+max                  1.0                    1.0  15001.000000       1000.0       0.999920            0.031720
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.9',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./M-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count               10.0                   10.0     10.000000         10.0      10.000000           10.000000
+mean                 1.0                    1.0  11574.700000       1000.0       0.996268            0.003172
+std                  0.0                    0.0   2203.933355          0.0       0.005118            0.010031
+min                  1.0                    1.0   8589.000000       1000.0       0.985122            0.000000
+25%                  1.0                    1.0  10034.750000       1000.0       0.996189            0.000000
+50%                  1.0                    1.0  11558.500000       1000.0       0.998238            0.000000
+75%                  1.0                    1.0  12761.250000       1000.0       0.999803            0.000000
+max                  1.0                    1.0  15001.000000       1000.0       0.999920            0.031720
+==========================================
+
+
+*************************************************************8
+Q *************************************************************8
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.3',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.986624                    0.0  15649.200000       1000.0       0.952410            6.327507
+std             0.006334                    0.0   3409.691508          0.0       0.005377            4.795717
+min             0.974522                    0.0  10571.000000       1000.0       0.945596            0.391220
+25%             0.982484                    0.0  13730.750000       1000.0       0.948865            1.705878
+50%             0.987261                    0.0  15826.500000       1000.0       0.951769            6.824551
+75%             0.992039                    0.0  16443.000000       1000.0       0.953504            9.789454
+max             0.993631                    0.0  20912.000000       1000.0       0.962456           13.601266
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.4',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.985987                    0.0  15966.800000       1000.0       0.953132            6.540213
+std             0.006578                    0.0   3305.420289          0.0       0.005568            4.935410
+min             0.974522                    0.0  10571.000000       1000.0       0.945596            0.391220
+25%             0.980892                    0.0  15096.750000       1000.0       0.950667            1.743838
+50%             0.987261                    0.0  16225.500000       1000.0       0.952955            6.824551
+75%             0.992039                    0.0  16443.000000       1000.0       0.953504           10.562349
+max             0.993631                    0.0  20912.000000       1000.0       0.962456           13.601266
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.5',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.986624                    0.0  15458.000000       1000.0       0.951683            6.301866
+std             0.006334                    0.0   3267.089837          0.0       0.005806            4.694493
+min             0.974522                    0.0  10081.000000       1000.0       0.945596            0.232434
+25%             0.982484                    0.0  14980.250000       1000.0       0.946972            1.638061
+50%             0.987261                    0.0  16225.500000       1000.0       0.950775            6.824551
+75%             0.992039                    0.0  16443.000000       1000.0       0.953309           10.562349
+max             0.993631                    0.0  20912.000000       1000.0       0.962456           11.618847
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.6',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.985987                    0.0  15878.300000       1000.0       0.952856            6.458529
+std             0.006578                    0.0   3062.663004          0.0       0.005661            4.819496
+min             0.974522                    0.0  10571.000000       1000.0       0.945596            0.468134
+25%             0.980892                    0.0  14980.250000       1000.0       0.947869            1.705878
+50%             0.987261                    0.0  16225.500000       1000.0       0.952955            6.824551
+75%             0.992039                    0.0  16443.000000       1000.0       0.956068           10.562349
+max             0.993631                    0.0  20912.000000       1000.0       0.962456           12.859353
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.7',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.987261                    0.0  15345.800000       1000.0       0.951832            6.170114
+std             0.006714                    0.0   3543.309495          0.0       0.006174            4.648052
+min             0.974522                    0.0  10191.000000       1000.0       0.945596            0.232434
+25%             0.982484                    0.0  12881.750000       1000.0       0.946832            1.743838
+50%             0.987261                    0.0  16059.500000       1000.0       0.950842            6.478396
+75%             0.993631                    0.0  16443.000000       1000.0       0.953204            9.756263
+max             0.993631                    0.0  20912.000000       1000.0       0.962456           12.859353
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.8',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.986624                    0.0  15431.800000       1000.0       0.951424            6.239737
+std             0.006334                    0.0   3415.525201          0.0       0.005775            4.693828
+min             0.974522                    0.0  10386.000000       1000.0       0.945592            0.256016
+25%             0.982484                    0.0  13730.750000       1000.0       0.947098            1.705878
+50%             0.987261                    0.0  15826.500000       1000.0       0.949452            6.824551
+75%             0.992039                    0.0  16443.000000       1000.0       0.953204            9.789454
+max             0.993631                    0.0  20911.000000       1000.0       0.962456           12.859353
+==========================================
+
+
+{'--crossover': 'uniform',
+ '--elitism': '0.4',
+ '--fitness-alpha': '0.9',
+ '--fitness-beta': '0.4',
+ '--max-generations': '1000',
+ '--mutation-method': 'linear-adaptive',
+ '--mutation-probability': '0.9',
+ '--population-size': '300'}
+Instances: 10, seeds: 5
+Variables 36, Clauses 157
+--------------------------
+resulsts ../../../data/36-157/./Q-opt.dat
+(10, 6)
+       satisfied_clauses  ratio_fully_satisfied    weight_sum  generations  fitness_value  relative_error_avg
+count          10.000000                   10.0     10.000000         10.0      10.000000           10.000000
+mean            0.984714                    0.0  15838.300000       1000.0       0.950927            6.522524
+std             0.007477                    0.0   3331.551025          0.0       0.004822            4.932166
+min             0.974522                    0.0  10571.000000       1000.0       0.945592            0.282622
+25%             0.980892                    0.0  14981.000000       1000.0       0.947394            1.706123
+50%             0.984077                    0.0  16397.000000       1000.0       0.950505            6.824551
+75%             0.992039                    0.0  17004.750000       1000.0       0.952469           10.978923
+max             0.993631                    0.0  20911.000000       1000.0       0.962456           12.859353
+==========================================
+
+
+*************************************************************8

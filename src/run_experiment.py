@@ -82,6 +82,7 @@ def run_experiment(data_dir, seed, number_seeds, n_instances, option, command_op
     
     # load results
     results_path = os.path.join(data_dir, f'{option}-opt.dat')
+    print("resulsts", results_path)
     if not os.path.exists(results_path):
         instances = glob.glob(os.path.join(data_directory, '*.mwcnf'))[:n_instances]
         instances_results = [{'instance_path': instance, 'max_weight': -1} for instance in instances]

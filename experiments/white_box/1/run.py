@@ -22,10 +22,6 @@ COMMAND_OPTIONS = {
     '--crossover': 'uniform',
 }
 
-LOG_FILE = ".white_box_1.log"
-with open(LOG_FILE, 'w') as f:
-	pass
-
 for option in ["M", "Q"]:
     output_dir = os.path.join("results", option)
     os.makedirs(output_dir, exist_ok=True)

@@ -5,11 +5,9 @@
 // STATIC PUBLIC METHODS -------------------------------------------------------------
 
 const int Individual::Settings::NO_CHROMOZONE_SIZE = -1;
-const double Individual::Settings::DEFAULT_MUTATION_PROBABILITY = 0.0;
 
 Individual::Settings Individual::IndividualSettings = {
     Individual::Settings::NO_CHROMOZONE_SIZE,
-    Individual::Settings::DEFAULT_MUTATION_PROBABILITY,
     Individual::onePointCrossover
 };
 
@@ -63,7 +61,7 @@ Individual::Individual( bool randomize ) {
             chromosome[i] = rand() % 2;
 }
 
-Individual Individual::crossoverAndMutate( const Individual & second ) {
+Individual Individual::crossoverAndMutate( const Individual & second, double mutationProbab ) {
     Individual offspring;
 
     // crossover
@@ -72,7 +70,7 @@ Individual Individual::crossoverAndMutate( const Individual & second ) {
     // mutate
     for ( int i = 0; i < Individual::IndividualSettings.chromosomeSize; i++ ) {
         int random = rand() % 100;
-        if ( random < Individual::IndividualSettings.mutationProbability*100 )
+        if ( random < mutationProbab*100 )
             offspring.chromosome[i] = !offspring.chromosome[i];
     }
 

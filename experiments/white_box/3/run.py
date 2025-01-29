@@ -10,7 +10,7 @@ from run_experiment import run_experiment
 
 DATA_DIR = os.path.join('..', '..', '..', 'data', '20-71', '.')
 
-ELISTISM_VALUES = range(0, 1, 0.1)
+ELISTISM_VALUES = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 SEEDS = 5
 INSTANCES = 10
 

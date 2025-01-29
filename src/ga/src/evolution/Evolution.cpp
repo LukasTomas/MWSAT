@@ -5,33 +5,34 @@
 
 // PUBLIC METHODS -------------------------------------------------------------
 
-const map<string, void (*)(const Individual &, const Individual &, Individual &)> Evolution::crossoverMethods = {
-    {"one-point", Individual::onePointCrossover},
-    {"two-point", Individual::twoPointCrossover},
-    {"uniform", Individual::uniformCrossover}
+const map<CrossoverMethod, void (*)(const Individual &, const Individual &, Individual &)> Evolution::crossoverMethods = {
+    {CrossoverMethod::ONE_POINT, Individual::onePointCrossover},
+    {CrossoverMethod::TWO_POINT, Individual::twoPointCrossover},
+    {CrossoverMethod::UNIFORM, Individual::uniformCrossover}
 };
 
-
-Evolution::Evolution( const Cnf & cnf, int maxGenerations, int populationSize, double elitismRatio, double mutationProbab, const string & crossover, int seed, double fitnessAlpha, double fitnessBeta ) 
+            
+Evolution::Evolution( const Cnf & cnf, int maxGenerations, int populationSize, double elitismRatio, double initialMutationProbab, 
+                      MutationMethod mutationMethod, CrossoverMethod crossover, int seed, double fitnessAlpha, double fitnessBeta ) 
     :   cnf(cnf), totalClauses(cnf.getClauses().size()), totalWeightSum(cnf.getTotalWeightSum()),
         maxGenerations(maxGenerations), populationSize(populationSize), 
         elitismSize(Evolution::GetElitismSize(populationSize, elitismRatio)), selectionSize(Evolution::GetSelectionSize(populationSize, elitismSize)),
-        mutationProbab(mutationProbab), crossover(crossover),
+        initialMutationProbab(initialMutationProbab), mutationMethod(mutationMethod),
+        /*crossover(crossover),*/
         generator(seed),
         fitnessAlpha(fitnessAlpha), fitnessBeta(fitnessBeta) {
     
-    printConfiguration();
+    // printConfiguration();
 
     void (*crossoverFunction)(const Individual & first, const Individual & second, Individual & offspring);
     try {
         crossoverFunction = crossoverMethods.at(crossover);
-    } catch ( const out_of_range & e ) {
+    } catch ( const exception & e ) {
         throw invalid_argument("Invalid crossover method: " + crossover);
     }
 
     Individual::SetSettings({
         cnf.getVariables(),
-        mutationProbab,
         crossoverFunction
     });
 
@@ -46,15 +47,24 @@ void Evolution::run() {
     vector<IndividualEvaluation*> selectedIndividuals/*(bestIndividualsSize, nullptr)*/;
 
     while( currentGeneration < maxGenerations ) {
+        double mutationProbab = getCurrentMutationProbab(currentGeneration);
+        // cout << "Generation: " << currentGeneration << " Mutation probab: " << mutationProbab << endl;  
+
         // 1) evaluate
         evaluate();                
 
         vector<IndividualEvaluation> newPopulation;
         // 2) elitism
-        selectBestIndividuals(selectedIndividuals, elitismSize);
-        updateTrainingData(selectedIndividuals[0]);
-        for ( int i = 0; i < elitismSize; i++ )
-            newPopulation.push_back(*selectedIndividuals[i]);
+        if ( elitismSize != 0 ) {
+            selectBestIndividuals(selectedIndividuals, elitismSize);
+            updateTrainingData(selectedIndividuals[0]);
+            for ( int i = 0; i < elitismSize; i++ )
+                newPopulation.push_back(*selectedIndividuals[i]);
+        } else {
+            // for statistics find the best individual
+            selectBestIndividuals(selectedIndividuals, 1);
+            updateTrainingData(selectedIndividuals[0]);
+        }
 
         // 3) select k parents
         selectedIndividuals.clear();
@@ -70,13 +80,11 @@ void Evolution::run() {
                     break;
 
                 newPopulation.push_back(
-                    {selectedIndividuals[i]->individual.crossoverAndMutate(selectedIndividuals[j]->individual), 
+                    {selectedIndividuals[i]->individual.crossoverAndMutate(selectedIndividuals[j]->individual, mutationProbab), 
                     IndividualEvaluation::NO_EVALUATION}
                 );
             }
         }
-
-        // 4) mutate
 
         // population should be full
         if ( newPopulation.size() < populationSize )
@@ -113,8 +121,8 @@ int Evolution::GetElitismSize( int populationSize, double elitismRatio ) {
         throw invalid_argument("Ratio of best individuals must be between 0 and 1");
 
     int elitismSize = populationSize * elitismRatio;
-    if ( elitismSize < 2 )
-        throw invalid_argument("Ratio of best individuals is too small -> best individuals size must be at least 2");
+    // if ( elitismSize < 2 )
+        // throw invalid_argument("Ratio of best individuals is too small -> best individuals size must be at least 2");
     if ( elitismSize > populationSize )
         throw invalid_argument("Ratio of best individuals is too big -> best individuals size must be smaller than population size");
 
@@ -188,6 +196,28 @@ double Evolution::fitness2(double satisfiedClauses, double weightSum) const {
     return alpha * satisfiedRatio + beta * weightRatio - gamma * unsatisfiedPenalty;
 }
 
+// double Evolution::fitness2(double satisfiedClauses, double weightSum) const {
+//     // Ratio of satisfied clauses
+//     double satisfiedRatio = satisfiedClauses / totalClauses;
+
+//     // Ratio of weights satisfied
+//     double weightRatio = weightSum / totalWeightSum;
+
+//     // Adjusted weight ratio using fitnessBeta to reduce the effect of misleading weights
+//     double adjustedWeightRatio = std::pow(weightRatio, fitnessBeta);
+
+//     // Dynamic penalty for unsatisfied clauses
+//     double unsatisfiedPenalty = (totalClauses - satisfiedClauses) / totalClauses;
+
+//     // Scaling unsatisfied penalty dynamically based on satisfaction ratio
+//     double penaltyScaling = 1.0 / (1.0 + std::exp(-12 * (satisfiedRatio - 0.75)));
+
+//     // Final fitness score for MWSAT
+//     const double alpha = fitnessAlpha;  // Balance between satisfied clauses and weights
+//     return alpha * satisfiedRatio + (1 - alpha) * adjustedWeightRatio - penaltyScaling * unsatisfiedPenalty;
+// }
+
+
 // ------------------------
 
 // 2) Selection -----------
@@ -255,6 +285,19 @@ void Evolution::selectRoullete( vector<IndividualEvaluation*> & selectedIndividu
 }
 // ------------------------
 
+double Evolution::getCurrentMutationProbab( int currentGneration ) const {
+    if ( mutationMethod == MutationMethod::FIXED )
+        return initialMutationProbab;
+
+    const double maxMutationProbab = initialMutationProbab;
+    const double minMutationProbab = 0.0;
+    
+    double mutationProbabStep = (maxMutationProbab - minMutationProbab) / maxGenerations;
+    double mutationProbab = maxMutationProbab - (mutationProbabStep * (currentGneration + 1));
+    return mutationProbab;
+}
+
+
 void Evolution::printConfiguration() const {
     cerr << "Configuration: " << endl;
     cerr << "\tMax generations: " << maxGenerations << endl;
@@ -262,7 +305,7 @@ void Evolution::printConfiguration() const {
     cerr << "\tElitism size: " << elitismSize << endl;
     cerr << "\tSelection size: " << selectionSize << endl;
     cerr << endl;
-    cerr << "\tMutation probability: " << mutationProbab << endl;
+    cerr << "\tMutation probability: " << initialMutationProbab << endl;
     cerr << "---------------------------------" << endl;
 }
 

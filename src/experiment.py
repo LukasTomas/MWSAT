@@ -63,6 +63,7 @@ class Experiment():
             ] + self._command_options, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
             if completed_process.returncode != 0:
+                print(completed_process.stderr)
                 raise Exception(f"Error running Genetic Algorithm on instance: {instance_result['instance_path']}")
 
             satisfied_clauses, weight_sum, generations, fitness_value, satisfied_clauses_ratios = self._parse_output(completed_process)

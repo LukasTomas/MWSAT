@@ -9,6 +9,20 @@
 #include <iostream>
 using namespace std;
 
+
+enum MutationMethod {
+    FIXED,
+    LINEAR_ADAPTIVE,
+    NUMBER_OF_MUTATION_METHODS
+};
+
+enum CrossoverMethod {
+    ONE_POINT,
+    TWO_POINT,
+    UNIFORM,
+    NUMBER_OF_CROSSOVER_METHODS
+};
+
 class Evolution {
 public:
 
@@ -26,10 +40,10 @@ public:
         double fitness;
     };
 
-    static const map<string, void (*)(const Individual &, const Individual &, Individual &)> crossoverMethods;
+    static const map<CrossoverMethod, void (*)(const Individual &, const Individual &, Individual &)> crossoverMethods;
 
 
-    Evolution( const Cnf & cnf, int maxGenerations, int populationSize, double elitismRatio, double mutationRate, const string & crossover, int seed, double fitnessAlpha, double fitnessBeta );
+    Evolution( const Cnf & cnf, int maxGenerations, int populationSize, double elitismRatio, double initialMutationProbab, MutationMethod mutationMethod, CrossoverMethod crossover, int seed, double fitnessAlpha, double fitnessBeta );
 
     void run();
     
@@ -43,6 +57,7 @@ private:
     const Cnf & cnf;
     const int totalClauses;
     const double totalWeightSum;
+    const double averageClauseWeight = totalWeightSum / totalClauses;
 
     const int maxGenerations;
     const int populationSize;
@@ -50,7 +65,8 @@ private:
     const int elitismSize;
     const int selectionSize;
 
-    const double mutationProbab;
+    const double initialMutationProbab;
+    const MutationMethod mutationMethod;
     const string crossover;
 
     const double fitnessAlpha;
@@ -73,7 +89,7 @@ private:
     void selectRoullete( vector<IndividualEvaluation*> & bestIndividuals );
     double fitness1( double satisfiedClauses, double weightSum ) const;
     double fitness2( double satisfiedClauses, double weightSum ) const;
-
+    double getCurrentMutationProbab( int currentGneration ) const;
 
     void printConfiguration() const;
     void updateTrainingData( const IndividualEvaluation * bestIndividual );

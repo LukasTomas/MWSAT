@@ -9,10 +9,8 @@ public:
 
     struct Settings {
         static const int NO_CHROMOZONE_SIZE;
-        static const double DEFAULT_MUTATION_PROBABILITY;
 
         int chromosomeSize;
-        double mutationProbability;
         void (*crossover)(const Individual & first, const Individual & second, Individual & offspring);
     };
 
@@ -26,7 +24,7 @@ public:
 
     Individual( bool randomize = false );
 
-    Individual crossoverAndMutate( const Individual & second );
+    Individual crossoverAndMutate( const Individual & second, double mutationProbab );
 
     const vector<bool> & getChromosome() const;
 
